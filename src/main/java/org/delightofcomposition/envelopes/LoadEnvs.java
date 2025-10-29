@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import org.delightofcomposition.util.FindResourceFile;
 import org.delightofcomposition.util.TextIO;
 
 public class LoadEnvs {
@@ -13,7 +14,7 @@ public class LoadEnvs {
     public static void loadEnvs() {
         if (envs != null)
             return;
-        String directory = "resources/envelopes";
+        String directory = FindResourceFile.findResourceDirectory("resources/envelopes").toString();
         envs = new ArrayList<Envelope>();
 
         try {
